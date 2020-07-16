@@ -1,4 +1,7 @@
 import "package:flutter/material.dart";
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+import 'DisplayPage.dart';
 
 void main() => runApp(new MyApp());
 
@@ -20,6 +23,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController username  = new TextEditingController();
+  String url = 'https://api.github.com/users/';
+  getUser( String username) async{
+    String gitProfile = url + username;
+    var res = await http.get(gitProfile);
+    var resBody = json.decode(res.body);
+    Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayPage(info: resBody,)));
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,8 +73,8 @@ class _HomePageState extends State<HomePage> {
                   hintStyle: TextStyle(color: Colors.grey,),
                   border: InputBorder.none,
                 ),
-              ),
-             
+                controller : username,
+              ), 
             ),
              SizedBox(height: 20,),
              MaterialButton(
@@ -71,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                 shape: RoundedRectangleBorder(
                   borderRadius:BorderRadius.circular(10),
                 ),
-                onPressed: () {  },
+                onPressed: () => getUser(username.text),
                 child: Center(child: Text("Search About User" , style:TextStyle(color: Colors.black,),),
               ),
              ),
