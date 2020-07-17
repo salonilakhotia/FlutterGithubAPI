@@ -2,6 +2,7 @@ import "package:flutter/material.dart";
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'DisplayPage.dart';
+import 'Followers.dart';
 
 void main() => runApp(new MyApp());
 
@@ -23,13 +24,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Followers> list =List();
+  Followers follower;
   TextEditingController username  = new TextEditingController();
   String url = 'https://api.github.com/users/';
   getUser( String username) async{
     String gitProfile = url + username;
     var res = await http.get(gitProfile);
     var resBody = json.decode(res.body);
-    Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayPage(info: resBody,)));
+
+     String urlfollowers = gitProfile +'/followers';
+    final response = await http.get(urlfollowers);
+    list = (json.decode(response.body) as List)
+      .map((data) => new Followers.fromJson(data))
+      .toList();
+      print(list[0].login);
+    Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayPage(info: resBody, profile: gitProfile)));
   }
 
   
