@@ -33,12 +33,12 @@ class _HomePageState extends State<HomePage> {
     var res = await http.get(gitProfile);
     var resBody = json.decode(res.body);
 
-     String urlfollowers = gitProfile +'/followers';
-    final response = await http.get(urlfollowers);
-    list = (json.decode(response.body) as List)
-      .map((data) => new Followers.fromJson(data))
-      .toList();
-      print(list[0].login);
+    // String urlfollowers = gitProfile +'/followers';
+    // final response = await http.get(urlfollowers);
+    // list = (json.decode(response.body) as List)
+    //   .map((data) => new Followers.fromJson(data))
+    //   .toList();
+    //   print(list[0].login);
     Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayPage(info: resBody, profile: gitProfile)));
   }
 
