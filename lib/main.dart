@@ -1,8 +1,9 @@
 import "package:flutter/material.dart";
+import 'package:githubAPI/Repos.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'DisplayPage.dart';
 import 'Followers.dart';
+import 'Display.dart';
 
 void main() => runApp(new MyApp());
 
@@ -28,21 +29,13 @@ class _HomePageState extends State<HomePage> {
   Followers follower;
   TextEditingController username  = new TextEditingController();
   String url = 'https://api.github.com/users/';
-  getUser( String username) async{
-    String gitProfile = url + username;
-    var res = await http.get(gitProfile);
-    var resBody = json.decode(res.body);
+ 
 
-    // String urlfollowers = gitProfile +'/followers';
-    // final response = await http.get(urlfollowers);
-    // list = (json.decode(response.body) as List)
-    //   .map((data) => new Followers.fromJson(data))
-    //   .toList();
-    //   print(list[0].login);
-    Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayPage(info: resBody, profile: gitProfile)));
+  passUsername(String name) {
+    //Navigator.push(context,  MaterialPageRoute(builder: (context) => Repos()));
+          Navigator.push(context,  MaterialPageRoute(builder: (context) => Display(username: name)));
   }
 
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,14 +87,13 @@ class _HomePageState extends State<HomePage> {
                 shape: RoundedRectangleBorder(
                   borderRadius:BorderRadius.circular(10),
                 ),
-                onPressed: () => getUser(username.text),
+                onPressed: () => passUsername(username.text),
                 child: Center(child: Text("Search About User" , style:TextStyle(color: Colors.black,),),
               ),
              ),
           ],),
         ),
-      ),
-      
+      ),  
     );
   }
 }
