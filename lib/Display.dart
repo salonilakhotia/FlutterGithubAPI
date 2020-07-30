@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:githubAPI/widget/AvatarUrl.dart';
 import 'package:githubAPI/widget/Detail.dart';
 import 'package:githubAPI/widget/Orgainzation.dart';
+import 'DisFollowers.dart';
 import 'package:http/http.dart' as http;
 import 'Repos.dart';
 import 'dart:convert';
@@ -107,6 +108,8 @@ class _DisplayState extends State<Display> {
               SizedBox(height: 8,),    
               //Detail(),
               Text(list[0].login, style: TextStyle(color: Colors.white,)),   
+              Text(list[1].login, style: TextStyle(color: Colors.white,)),   
+              Text(list[2].login, style: TextStyle(color: Colors.white,)),   
               ]),
           )
       ),
@@ -125,7 +128,9 @@ class _DisplayState extends State<Display> {
             ),
             IconButton(
               icon: Icon(Icons.hotel, color: Colors.white),
-              onPressed: () {},
+              onPressed: () {
+                String urlFollower = 'https://api.github.com/users/' + widget.username +'/followers';
+                Navigator.push(context,  MaterialPageRoute(builder: (context) => DisFollowers(urlFollowers: urlFollower)));},
             ),
             IconButton(
               icon: Icon(Icons.account_box, color: Colors.white),

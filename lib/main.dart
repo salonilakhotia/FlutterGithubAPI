@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'Followers.dart';
 import 'Display.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
 
 void main() => runApp(new MyApp());
 
@@ -49,10 +51,15 @@ class _HomePageState extends State<HomePage> {
             Container(
               width: 130,
               height: 130,
-              child: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                backgroundImage: NetworkImage('https://icon-library.net/images/github-icon-png/github-icon-png-29.jpg'),
-              ),
+              child: CachedNetworkImage(
+                imageUrl: "https://icon-library.net/images/github-icon-png/github-icon-png-29.jpg",
+                placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
+                ),
+              // child: CircleAvatar(
+              //   backgroundColor: Colors.transparent,
+              //   backgroundImage: NetworkImage('https://icon-library.net/images/github-icon-png/github-icon-png-29.jpg'),
+              // ),
             ),
             SizedBox(height: 40,),
             Text("Github", 
