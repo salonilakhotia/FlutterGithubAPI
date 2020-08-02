@@ -32,6 +32,7 @@ dependencies:
   http: any
   url_launcher: ^5.5.0
   cached_network_image: ^2.2.0+1
+  custom_navigator: ^0.2.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

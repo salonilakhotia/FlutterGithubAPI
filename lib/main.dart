@@ -1,5 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:githubAPI/Repos.dart';
+import 'package:githubAPI/DisplayRepos.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'Followers.dart';

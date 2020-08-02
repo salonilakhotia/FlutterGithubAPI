@@ -6,13 +6,13 @@ class Repository {
   final String language;
   final int star;
 
-  Repository({this.description, this.link, this.name, this.language, this.star});
+  Repository({ this.link, this.name,this.description, this.language, this.star});
 
   factory Repository.fromJson(Map<String, dynamic> json) {
     return Repository(
-      description: json['description'],
       link : json['html_url'],
       name : json['name'],
+      description: json['description'],
       language: json['language'],
       star: json['staredgazers_count'],
       
