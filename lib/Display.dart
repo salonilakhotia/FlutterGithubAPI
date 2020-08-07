@@ -109,7 +109,8 @@ class _DisplayState extends State<Display> {
         ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Color.fromRGBO(58, 66, 86, 1.0),
+        
+        color: Colors.grey[600],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
@@ -118,19 +119,19 @@ class _DisplayState extends State<Display> {
               onPressed: () {},
             ),
             IconButton(
-              icon: Icon(Icons.blur_on, color: Colors.white),
+              icon: Icon(Icons.view_day, color: Colors.white),
               onPressed:   (){  
                 String urlRepo = 'https://api.github.com/users/' + widget.username +'/repos';
                 Navigator.push(context,  MaterialPageRoute(builder: (context) => Repos(urlRepos : urlRepo)));}
             ),
             IconButton(
-              icon: Icon(Icons.hotel, color: Colors.white),
+              icon: Icon(Icons.group, color: Colors.white),
               onPressed: () {
                 String urlFollower = 'https://api.github.com/users/' + widget.username +'/followers';
                 Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayFollowers(urlFollowers: urlFollower)));},
             ),
             IconButton(
-              icon: Icon(Icons.account_box, color: Colors.white),
+              icon: Icon(Icons.people, color: Colors.white),
               onPressed: () {
                  String urlFollowing = 'https://api.github.com/users/' + widget.username +'/following';
                 Navigator.push(context,  MaterialPageRoute(builder: (context) => DisplayFollowings(urlFollowings: urlFollowing)));},

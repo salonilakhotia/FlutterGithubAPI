@@ -8,7 +8,6 @@ String gitLink;
 
 GitLink({this.gitLink});
 
-
   @override
   Widget build(BuildContext context) {
     return Container(

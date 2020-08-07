@@ -27,7 +27,7 @@ class DisFollowers extends StatefulWidget {
 
 class _DisFollowersState extends State<DisFollowers> {
   
-    List<Followers> list = List();
+   List<Followers> list = List();
    bool loading=false;
  
 
