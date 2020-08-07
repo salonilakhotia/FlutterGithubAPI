@@ -1,16 +1,13 @@
-# githubAPI
+# GithubAPI
 
-A new Flutter project.
+My new Flutter project based on Github API fetch. This will show you all the necessary details of the user Github profile just with the username of the person.
 
-## Getting Started
+## App Pages Design
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Please ⭐ the Repository if you liked it.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Connect with me on LinkedIn: [Saloni Lakhotia](https://www.linkedin.com/in/saloni-lakhotia-11b0a7175)
+
+# Thank You!
