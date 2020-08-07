@@ -3,12 +3,13 @@ import 'package:githubAPI/widget/AvatarUrl.dart';
 import 'package:githubAPI/widget/Detail.dart';
 import 'package:githubAPI/widget/Blog.dart';
 import 'package:githubAPI/widget/GitLink.dart';
+import 'package:githubAPI/widget/Followers.dart';
 import 'DisplayFollowings.dart';
 import 'DisplayFollowers.dart';
 import 'package:http/http.dart' as http;
 import 'DisplayRepos.dart';
 import 'dart:convert';
-import 'Followers.dart';
+
 
 class Display extends StatefulWidget {
   final String username;

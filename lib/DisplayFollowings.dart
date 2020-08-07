@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Followings.dart';
+import 'package:githubAPI/widget/Followings.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert'; 
 import 'package:url_launcher/url_launcher.dart';

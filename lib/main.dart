@@ -2,7 +2,6 @@ import "package:flutter/material.dart";
 import 'package:githubAPI/DisplayRepos.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'Followers.dart';
 import 'Display.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
@@ -26,8 +25,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Followers> list =List();
-  Followers follower;
   TextEditingController username  = new TextEditingController();
   String url = 'https://api.github.com/users/';
  
