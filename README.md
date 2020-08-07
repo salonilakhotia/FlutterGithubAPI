@@ -4,6 +4,8 @@ My new Flutter project based on Github API fetch. This will show you all the nec
 
 ## App Pages Design
 
+<h4 >  Bottom Navigation Bar is used to navigate through these pages after username is entered !!! </h4>
+ 
 <img src="https://github.com/salonilakhotia/FlutterGithubAPI/blob/master/images/Username.jpeg" height = "800" align="center">
 <img src="https://github.com/salonilakhotia/FlutterGithubAPI/blob/master/images/Username1.jpeg" height = "800" align="center">
 <img src="https://github.com/salonilakhotia/FlutterGithubAPI/blob/master/images/Home.jpeg" height = "800" align="center">
